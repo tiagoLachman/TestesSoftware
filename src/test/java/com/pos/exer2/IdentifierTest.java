@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.pos.testessoftware.exer2;
+package com.pos.exer2;
 
 import com.pos.exer2.Identifier;
 import com.pos.exer2.InvalidIdentifierException;
