@@ -18,31 +18,31 @@ public class IdentifierTest {
     @Test
     void testT0_Valido() {
         assertDoesNotThrow(() -> {
-            assertTrue(Identifier.isValid("a1"));
+            assertTrue(Identifier.isValid("abc12"));
         });
     }
 
     @Test
     void testT0_PrimeiroCaractereInvalido() {
         Exception e = assertThrows(InvalidIdentifierException.class, () -> {
-            Identifier.isValid("2B3");
-        });
-        assertEquals("O primeiro caractere deve ser uma letra.", e.getMessage());
-    }
-
-    @Test
-    void testT0_CaractereInvalido() {
-        Exception e = assertThrows(InvalidIdentifierException.class, () -> {
-            Identifier.isValid("Z-12");
+            Identifier.isValid("cont*1");
         });
         assertEquals("Contém caractere inválido: apenas letras e dígitos são permitidos.", e.getMessage());
     }
 
     @Test
+    void testT0_CaractereInvalido() {
+        Exception e = assertThrows(InvalidIdentifierException.class, () -> {
+            Identifier.isValid("1soma");
+        });
+        assertEquals("O primeiro caractere deve ser uma letra.", e.getMessage());
+    }
+
+    @Test
     void testT0_TamanhoInvalido() {
         Exception e = assertThrows(InvalidIdentifierException.class, () -> {
-            Identifier.isValid("A1b2C3d");
+            Identifier.isValid("a123456");
         });
-        assertEquals("Tamanho inválido: deve ter entre 1 e 6 caracteres.", e.getMessage());
+        assertEquals("Tamanho invalido: deve ter entre 1 e 6 caracteres.", e.getMessage());
     }
 }
